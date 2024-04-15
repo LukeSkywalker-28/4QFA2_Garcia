@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Enter a number between 2 and 10:</h2>
+    <input type="number" id="start" min="2" max="10">
+    <input type="number" id="end" min="2" max="10">
+    <button onclick="multTable()">Click when ready!</button>
+    <div id="tableContainer"></div>
+</div>
+
+<script>
+    function multTable() {
+        var start = document.getElementById("start").value;
+        var end = document.getElementById("end").value;
+
+
+        if (start < 2 || start > 10 || end < 2 || end > 10) {
+            alert("Please enter numbers between 2 and 10");
+            return;
+        }
+
+        var table = "<table border='1'>";
+        for (var i = 1; i<=start; i++) {
+            table += "<tr>";
+            for (var j = 1; j<=end; j++) {
+                table += "<td>" + (i * j) + "</td>";
+            }
+            table += "</tr>";
+        }
+        table += "</table>";
+
+        document.getElementById("tableContainer").innerHTML = table;
+    }
+    </script>
+</body>
+</html>
